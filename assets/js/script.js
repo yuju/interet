@@ -20,4 +20,8 @@ $(document).ready(function(){
     $("#marqueurs").click(function(){
         $("#section").load("inc/marqueurs.php");
     });
+
+    $("#connexion").click(function(){
+        $("#section").load("inc/connexion.php");
+    });
 });
