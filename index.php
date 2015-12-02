@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Stock Savon Beauté</title>
+	<title>Point d'interet</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body onload="initMap();">
 	
 	<?php require "config.php"; ?>
 
@@ -41,6 +41,7 @@
 
 	<!-- Bootstrap core JavaScript ================================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="assets/js/script.js"></script>
 

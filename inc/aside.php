@@ -1,12 +1,28 @@
 <div>
-	<ul class="nav nav-sidebar">
-		<li><a id="produits" href="#">Produits</a></li>
-		<li><a id="ingredients" href="#">Ingredients</a></li>
-		<li><a id="recettes" href="#">Recettes</a></li>
-	</ul>
-	<ul class="nav nav-sidebar">
-		<li><a href="">Nav item again</a></li>
-		<li><a href="">One more nav</a></li>
-		<li><a href="">Another nav item</a></li>
-	</ul>
+	<h2>Filtres</h2>
+	<form method="POST" action="inc/usager_add_handle.php">
+		<div class="form-group">
+			<label for="nom">Nom</label>
+			<input type="input" class="form-control" id="nom" name ="nom">
+		</div>
+
+		<div class="form-group">
+			<label for="prenom">Type</label>
+			<input type="input" class="form-control" id="prenom" name="prenom">
+		</div>
+		<div class="form-group">
+			<label for="date_naissance">Date de naissance</label>
+			<input type="input" class="form-control" id="date_naissance" name="date_naissance">
+		</div>
+
+		<div class="form-group">
+			<label for="login">Login</label>
+			<input type="input" class="form-control" id="login" name="login">
+		</div>
+		<div class="form-group">
+			<label for="password">Mot de passe</label>
+			<input type="password" class="form-control" id="password" name="password">
+		</div>
+
+	</form>
 </div>

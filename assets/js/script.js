@@ -1,13 +1,23 @@
+var map;
+function initMap() {
+  	map = new google.maps.Map(document.getElementById('map'), {
+    	center: {lat: 24.879177, lng: 121.182466},
+    	zoom: 7
+  	});
+}
+
+
+initMap
 $(document).ready(function(){
-    $("#produits").click(function(){
-        $("#section").load("inc/produits.php");
+    $("#usagers").click(function(){
+        $("#section").load("inc/usagers.php");
     });
 
-    $("#main-section").on("click","#produit_add", function(){
-        $("#section").load("inc/produit_add.php");
+    $("#main-section").on("click","#usager_add", function(){
+        $("#section").load("inc/usager_add.php");
     });
 
-    $("#ingredients").click(function(){
-        $("#section").load("inc/ingredients.php");
+    $("#marqueurs").click(function(){
+        $("#section").load("inc/marqueurs.php");
     });
 });

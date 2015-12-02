@@ -2,7 +2,7 @@
 	require '../config.php';
 ?>
 <div >
-	<h1 class="page-header">Ingredients</h1>
+	<h1 class="page-header">Marqueurs</h1>
 
 	<div class="row placeholders">
 		<div class="col-xs-6 col-sm-3 placeholder">
@@ -25,11 +25,11 @@
 	
 	<div class="row placeholders">
 		<button id="produit_add" type="button" class="btn btn-primary pull-right" aria-label="Right Align">
-			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter un ingrédient
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter un marqueur
 		</button>
 	</div>
 
-	<h2 class="sub-header">Liste des ingrédients</h2>
+	<h2 class="sub-header">Liste des marqueurs</h2>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
