@@ -6,8 +6,6 @@ function initMap() {
   	});
 }
 
-
-initMap
 $(document).ready(function(){
     $("#usagers").click(function(){
         $("#section").load("inc/usagers.php");
@@ -23,5 +21,12 @@ $(document).ready(function(){
 
     $("#connexion").click(function(){
         $("#section").load("inc/connexion.php");
+    });
+    
+    $("#main-section").on("click","#inscription", function(){
+        $("#section").load("inc/inscription.php");
+    });
+     $("#main-section").on("click","#forgotpassword", function(){
+        $("#section").load("inc/forgotpassword.php");
     });
 });

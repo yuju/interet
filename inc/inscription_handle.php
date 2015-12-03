@@ -21,7 +21,7 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	$msg = wordwrap($msg,70);
 
 	// send email
-	mail("yuju.shih@gmail.com","Test Email",$msg);
+	mail($email,"Test Email",$msg);
 
 }
 
