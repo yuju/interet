@@ -14,13 +14,17 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	// Ajouter la confirmation par email
 
 	// the message
-	$msg = "First line of text\nSecond line of text";
+	$msg = "Bienvenue   $login,\n
+	Nous vous remercions de votre inscription sur notre boutique en ligne.\n
+    Afin d’accéder à votre compte et pour bénéficier de tous vos avantages sur notre web site,\n
+    conservez bien précieusement vos identifiant et mot de passe :\n
+	Identifiant : $email, Mot de passe : $password";
 
 	// use wordwrap() if lines are longer than 70 characters
 	$msg = wordwrap($msg,70);
 
 	// send email
-	mail($email,"Merci de votre inscription",$msg);
+	mail($email,$login."Bienvenue chez Point d'interet",$msg);
 
 }
 
