@@ -21,12 +21,32 @@ $(document).ready(function(){
 
     $("#connexion").click(function(){
         $("#section").load("inc/connexion.php");
+        /*$.ajax({
+            url: "inc/connexion.php",
+            type: "GET",
+            data: 'go',
+            contentType:'text/html',
+            success: function(result){
+                $("#section").html(result);
+            }
+        });*/
     });
     
     $("#main-section").on("click","#inscription", function(){
         $("#section").load("inc/inscription.php");
     });
-     $("#main-section").on("click","#forgotpassword", function(){
+    
+
+    $("#main-section").on("click","#forgotpassword", function(){
         $("#section").load("inc/forgotpassword.php");
+    });
+    
+    $("#deconnexion").click(function(){
+        $.ajax({
+            url: "inc/deconnexion.php", 
+            success: function(result){
+                document.location = "http://localhost/interet/";
+            }
+        });
     });
 });

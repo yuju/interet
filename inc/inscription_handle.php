@@ -1,5 +1,4 @@
 <?php
-
 require "../config.php";
 
 if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"]) ) {
@@ -21,7 +20,7 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	$msg = wordwrap($msg,70);
 
 	// send email
-	mail($email,"Test Email",$msg);
+	mail($email,"Merci de votre inscription",$msg);
 
 }
 
