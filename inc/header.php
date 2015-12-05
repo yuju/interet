@@ -17,7 +17,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['usager']['login'];?> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Profile</a></li>
+						<li><a id="profile" href="#" data-login="<?php echo $_SESSION['usager']['login'];?>">Profile</a></li>
 						<li role="separator" class="divider"></li>
 						<li><a id="deconnexion" href="#">Deconnexion</a></li>
 					</ul>

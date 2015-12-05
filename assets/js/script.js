@@ -18,6 +18,19 @@ $(document).ready(function(){
     $("#marqueurs").click(function(){
         $("#section").load("inc/marqueurs.php");
     });
+    
+    $("#profile").click(function(){
+        var login = $(this).attr("data-login");
+        $.ajax({
+            url: "inc/profile.php",
+            type: "GET",
+            data: 'login='+login,
+            contentType:'text/html',
+            success: function(result){
+                $("#section").html(result);
+            }
+        });
+    });
 
     $("#connexion").click(function(){
         $("#section").load("inc/connexion.php");
@@ -49,4 +62,6 @@ $(document).ready(function(){
             }
         });
     });
+
+
 });
