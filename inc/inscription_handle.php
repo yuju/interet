@@ -15,8 +15,8 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 
 	// the message
 	$msg = "Bienvenue   $login,\n
-	Nous vous remercions de votre inscription sur notre boutique en ligne.\n
-    Afin d’accéder à votre compte et pour bénéficier de tous vos avantages sur notre web site,\n
+	Nous vous remercions de votre inscription sur notre paltfome de points d'interet.\n
+    Afin d’accéder à votre compte et de contribuer a enrichier notre platforme,\n
     conservez bien précieusement vos identifiant et mot de passe :\n
 	Identifiant : $email, Mot de passe : $password";
 
@@ -24,7 +24,7 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	$msg = wordwrap($msg,70);
 
 	// send email
-	mail($email,$login."Bienvenue chez Point d'interet",$msg);
+	mail($email,$login.", Bienvenue chez Point d'interet",$msg);
 
 }
 
