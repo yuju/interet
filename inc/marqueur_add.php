@@ -28,7 +28,7 @@
 				</div>
 				<div class="form-group">
 					<label for="content">Content</label>
-					<input type="input" class="form-control" id="content" name="content">
+					<textarea class="form-control" id="content" name="content"></textarea>
 				</div>		
 
 			</div>
@@ -43,6 +43,13 @@
 				<div class="form-group">
 					<label for="longitude">Longitude</label>
 					<input type="input" class="form-control" id="longitude" name="longitude">
+				</div>	
+											
+			</div>
+			<div class="col-md-6">
+			<div class="form-group">
+					<label for="map">Map</label>
+					<input type="input" class="form-control" id="map" name="map">
 				</div>	
 											
 			</div>
