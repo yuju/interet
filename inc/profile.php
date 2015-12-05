@@ -15,7 +15,7 @@ if ( isset($_GET["login"])) {
 <div >
 	<h1 class="page-header">Votre Profile</h1>
 	<div>
-		<form method="GET" action="inc/profile_handle.php">
+		<form method="POST" action="inc/profile_handle.php">
 			<div class="col-md-6">
 				<fieldset>
 
@@ -26,18 +26,18 @@ if ( isset($_GET["login"])) {
 
 				<div class="form-group">
 					<label for="prenom">Prénom</label>
-					<input type="input" class="form-control" id="prenom" name="prenom">
+					<input type="input" class="form-control" id="prenom" name="prenom" value="<?php if(isset($usager['prenom'])) echo $usager['prenom']; ?>">
 				</div>
 				<div class="form-group">
 					<label for="date_naissance">Date de naissance</label>
-					<input type="input" class="form-control" id="date_naissance" name="date_naissance">
+					<input type="input" class="form-control" id="date_naissance" name="date_naissance" value="<?php if(isset($usager['date_naissance'])) echo $usager['date_naissance']; ?>">
 				</div>
 
 				</fieldset>	
 
-				<div class="form-group">
+				<div class="form-group"> 
 					<label for="login">Login</label>
-					<input type="input" class="form-control" id="login" name="login">
+					<input type="input" class="form-control" id="login" name="login" value="<?php if(isset($usager['login'])) echo $usager['login']; ?>" >
 				</div>
 				<div class="form-group">
 					<label for="password">Mot de passe</label>
@@ -49,19 +49,19 @@ if ( isset($_GET["login"])) {
 
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email">
+					<input type="email" class="form-control" id="email" name="email" value="<?php if(isset($usager['email'])) echo $usager['email']; ?>">
 				</div>	
 				<div class="form-group">
 					<label for="mobile">Mobile</label>
-					<input type="input" class="form-control" id="mobile" name="mobile">
+					<input type="input" class="form-control" id="mobile" name="mobile" value="<?php if(isset($usager['mobile'])) echo $usager['mobile']; ?>">
 				</div>	
 				<div class="form-group">
 					<label for="adresse">Adresse</label>
-					<input type="input" class="form-control" id="adresse" name="adresse">
+					<input type="input" class="form-control" id="adresse" name="adresse" value="<?php if(isset($usager['adresse'])) echo $usager['adresse']; ?>">
 				</div>									
 			</div>
 			<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Enregistrer</button>
+			<button type="submit" class="btn btn-primary">Modification</button>
 			</div>
 		</form>
 	</div>
