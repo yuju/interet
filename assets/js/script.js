@@ -18,6 +18,10 @@ $(document).ready(function(){
     $("#marqueurs").click(function(){
         $("#section").load("inc/marqueurs.php");
     });
+      $("#main-section").on("click","#marqueur_add", function(){
+        $("#section").load("inc/marqueur_add.php");
+    });
+
     
     $("#profile").click(function(){
         var login = $(this).attr("data-login");
