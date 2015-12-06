@@ -13,7 +13,7 @@ if ( isset($_GET["login"])) {
 ?>
 
 <div >
-	<h1 class="page-header">Votre Profile</h1>
+	<h1 class="page-header">You can Modified your marqueurs</h1>
 	<div>
 		<form method="POST" action="inc/profile_handle.php">
 			<div class="col-md-6">

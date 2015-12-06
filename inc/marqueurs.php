@@ -46,9 +46,10 @@ require 'config.php';
 							<td><?php echo $donnees["login"]; ?> </td>
 							<td><?php echo $donnees["date"]; ?> </td>
 							<td>
-								<button id="produit_add" type="button" class="btn btn-xs btn-primary" aria-label="Right Align">
+								<button id="marqueur_modify" type="button" class="btn btn-xs btn-primary" aria-label="Right Align" data-id="<?php echo $donnees["id"]; ?>">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								</button>
+
 							</td>
 						</tr>
 						<?php
