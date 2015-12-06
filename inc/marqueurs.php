@@ -37,19 +37,17 @@
 					<th>Id</th>
 					<th>Nom</th>
 					<th>Type</th>
-					<th>Adresse</th>
 					<th>Ville</th>
 					<th>Pays</th>
 					<th>Latitude</th>
 					<th>Longitude</th>
-					<th>Content</th>
 				</tr>
 			</thead>
 			<tbody>
 				
 				<tr>
 					<?php 
-						$query_cmd = "SELECT * FROM marqueur";
+						$query_cmd = "SELECT m.*, p.nom as nom_pays FROM marqueur m, pays p Where m.pays = p.code";
 						$reponse = $bdd->query($query_cmd);
 						while ($donnees = $reponse->fetch())
 						{
@@ -58,16 +56,11 @@
 							<td><?php echo $donnees["id"]; ?> </td>
 							<td><?php echo $donnees["nom"]; ?> </td>
 							<td><?php echo $donnees["type"]; ?> </td>
-							<td><?php echo $donnees["adresse"]; ?> </td>
 							<td><?php echo $donnees["ville"]; ?> </td>
-							<td><?php echo $donnees["pays"]; ?> </td>
+							<td><?php echo $donnees["nom_pays"]; ?> </td>
 							<td><?php echo $donnees["latitude"]; ?> </td>
 							<td><?php echo $donnees["longitude"]; ?> </td>
-							<td><?php echo $donnees["content"]; ?> </td>
 							<td>
-								<button id="produit_add" type="button" class="btn btn-xs btn-primary" aria-label="Right Align">
-									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-								</button>
 								<button id="produit_add" type="button" class="btn btn-xs btn-success" aria-label="Right Align">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								</button>

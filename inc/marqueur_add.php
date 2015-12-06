@@ -1,8 +1,14 @@
+<?php
+
+require "../config.php";
+
+?>
+
 <div >
 	<h1 class="page-header">Ajouter un marqueur</h1>
 	<div>
 		<form method="POST" action="inc/marqueur_add_handle.php">
-			<div class="col-md-5">
+			<div class="col-md-4">
 
 				<div class="form-group">
 					<label for="nom">Nom</label>
@@ -11,7 +17,18 @@
 
 				<div class="form-group">
 					<label for="type">Type</label>
-					<input type="input" class="form-control" id="type" name="type">
+					<select class="form-control" id="type" name="type">
+						<option>choir un type</option>
+						<?php 
+						$query_cmd = "SELECT * FROM type";
+						$reponse = $bdd->query($query_cmd);
+						while ($donnees = $reponse->fetch())
+						{
+							// Utiliser PHP pour afficher les options.
+							echo '<option value="'.$donnees["nom"].'">'.$donnees["nom"].'</option>';
+						}
+						?>
+					</select>
 				</div>
 				<div class="form-group">
 					<label for="adresse">Adresse</label>
@@ -24,7 +41,20 @@
 				</div>
 				<div class="form-group">
 					<label for="pays">Pays</label>
-					<input type="pays" class="form-control" id="pays" name="pays">
+					<select class="form-control" id="pays" name="pays">
+						<option>choir un pays</option>
+						<?php 
+						$query_cmd = "SELECT * FROM pays";
+						$reponse = $bdd->query($query_cmd);
+						while ($donnees = $reponse->fetch())
+						{
+							// Utiliser php dans le html pour afficher les options.
+							?>
+							<option value="<?php echo $donnees["code"];?>"><?php echo $donnees["code"].' - '.$donnees["nom"];?></option>
+							<?php
+						} 
+						?>
+					</select>
 				</div>
 				<div class="form-group">
 					<label for="content">Content</label>
@@ -32,29 +62,31 @@
 				</div>		
 
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-8">
+				<div class="col-md-12">
+					<div class="col-md-6">
 
-				<div class="form-group">
-					<label for="latitude">Latitude</label>
-					<input type="latitude" class="form-control" id="latitude" name="latitude">
-				</div>	
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-					<label for="longitude">Longitude</label>
-					<input type="input" class="form-control" id="longitude" name="longitude">
-				</div>	
-											
-			</div>
-			<div class="col-md-6">
-			<div class="form-group">
-					<label for="map">Map</label>
-					<input type="input" class="form-control" id="map" name="map">
-				</div>	
-											
+						<div class="form-group">
+							<label for="latitude">Latitude</label>
+							<input type="latitude" class="form-control" id="latitude" name="latitude">
+						</div>	
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="longitude">Longitude</label>
+							<input type="input" class="form-control" id="longitude" name="longitude">
+						</div>	
+
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<div id="mapmarker"></div>
+					</div>		
+				</div>
 			</div>
 			<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Enregistrer</button>
+				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</div>
 		</form>
 	</div>
