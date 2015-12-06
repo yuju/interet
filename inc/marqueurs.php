@@ -20,15 +20,19 @@ require 'config.php';
 					<th>Type</th>
 					<th>Ville</th>
 					<th>Pays</th>
-					<th>Latitude</th>
-					<th>Longitude</th>
+					<th>Usager</th>
+					<th>Date</th>
 				</tr>
 			</thead>
 			<tbody>
 				
 				<tr>
 					<?php 
-					$query_cmd = "SELECT m.*, p.nom as nom_pays FROM marqueur m, pays p Where m.pays = p.code";
+					$query_cmd = "SELECT m.id, m.nom, type, ville, p.nom AS nom_pays, mu.date, u.login 
+					FROM marqueur m, pays p, marqueur_usager mu, usager u 
+					WHERE (m.pays = p.code) AND  (m.id = mu.id_marqueur) AND (mu.id_usager = u.id)
+					ORDER BY date DESC;";
+
 					$reponse = $bdd->query($query_cmd);
 					while ($donnees = $reponse->fetch())
 					{
@@ -39,8 +43,8 @@ require 'config.php';
 							<td><?php echo $donnees["type"]; ?> </td>
 							<td><?php echo $donnees["ville"]; ?> </td>
 							<td><?php echo $donnees["nom_pays"]; ?> </td>
-							<td><?php echo $donnees["latitude"]; ?> </td>
-							<td><?php echo $donnees["longitude"]; ?> </td>
+							<td><?php echo $donnees["login"]; ?> </td>
+							<td><?php echo $donnees["date"]; ?> </td>
 							<td>
 								<button id="produit_add" type="button" class="btn btn-xs btn-primary" aria-label="Right Align">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
