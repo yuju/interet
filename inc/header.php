@@ -12,8 +12,8 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<?php if (isset($_SESSION['usager'])){ ?>
-				<li><a id="marqueurs" href="#">Marqueurs</a></li>
-				<li><a id="usagers" href="#">Usagers</a></li>				
+				<li><a id="marqueurs" href="marqueurs.php">Marqueurs</a></li>
+				<li><a id="usagers" href="usagers.php">Usagers</a></li>				
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['usager']['login'];?> <span class="caret"></span></a>
 					<ul class="dropdown-menu">

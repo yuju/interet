@@ -27,17 +27,17 @@ function initMapMarker() {
 }
 
 $(document).ready(function(){
-    $("#usagers").click(function(){
+/*    $("#usagers").click(function(){
         $("#section").load("inc/usagers.php");
-    });
+    });*/
 
     $("#main-section").on("click","#usager_add", function(){
         $("#section").load("inc/usager_add.php");
     });
 
-    $("#marqueurs").click(function(){
+/*    $("#marqueurs").click(function(){
         $("#section").load("inc/marqueurs.php");
-    });
+    });*/
     
     $("#main-section").on("click","#marqueur_add", function(){
         $.ajax({

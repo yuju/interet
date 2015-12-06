@@ -14,5 +14,5 @@ if ( isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["login"])) 
 	$query_cmd = "INSERT INTO usager (nom, prenom, login, password, email, mobile, adresse) values ('$nom','$prenom','$login','$password','$email','$mobile','$adresse')";
 	$bdd->exec($query_cmd);
 }
-header("LOCATION:../index.php");
+header("LOCATION:../usagers.php");
 echo "Le nouveau produit est enrigistré";
