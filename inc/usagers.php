@@ -1,5 +1,5 @@
 <?php 
-	require '../config.php';
+	require 'config.php';
 ?>
 <div >
 	<h1 class="page-header">Usagers</h1>
