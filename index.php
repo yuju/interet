@@ -40,11 +40,7 @@
 		</div>
 	</section>
 
-	<!-- Bootstrap core JavaScript ================================================== -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="assets/js/script.js"></script>
+	<footer> <?php require "inc/footer.php"; ?></footer>
 
 </body>
 </html>
