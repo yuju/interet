@@ -7,11 +7,10 @@ if ( isset($_GET["id"])) {
 	$reponse = $bdd->query($query_cmd);
 	$marqueur = $reponse->fetch();
 
+	// get record history//
 	$query_cmd = "SELECT * FROM marqueur_usager mu, usager u 
 	WHERE (mu.id_usager = u.id) AND (id_marqueur =$id)";
-
 	$reponse = $bdd->query($query_cmd);
-	$data = $reponse->fetch();
 
 }
 ?>
@@ -80,3 +79,38 @@ if ( isset($_GET["id"])) {
 		</div>
 	</form>
 </div>
+
+<h2 class="sub-header">This is modify record</h2>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+
+					<th>Nom</th> <!-- username -->
+					<th>Login</th>
+					<th>Action</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr>
+					<?php 
+					while ($donnees = $reponse->fetch())
+					{
+						?>
+						<tr>
+							<td><?php echo $donnees["nom"]; ?> </td>
+							<td><?php echo $donnees["login"]; ?> </td>
+							<td><?php echo utf8_encode($donnees["action"]); ?> </td>
+							<td><?php echo $donnees["date"]; ?> </td>
+							
+						</tr>
+						<?php
+					}
+					?>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
