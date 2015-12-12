@@ -61,7 +61,7 @@ if ( isset($_GET["login"])) {
 				</div>									
 			</div>
 			<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Modification</button>
+			<button type="submit" class="btn btn-danger">Modification</button>
 			</div>
 		</form>
 	</div>
