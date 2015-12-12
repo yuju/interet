@@ -29,6 +29,41 @@ function initMapMarker() {
 
 $(document).ready(function(){
 
+    $("#filter-form").submit(function(){
+        
+/*        var nom  = $("#filter-form #nom").val();
+        var type  = $("#filter-form #type").val();
+        var pays  = $("#filter-form #pays").val();
+        var ville  = $("#filter-form #ville").val();
+        var data = 'nom='+nom+'&type='+type+'&pays='+pays+'&ville='+ville;*/
+
+        var data = $(this).serialize();
+
+        $.ajax({
+            type : 'GET',
+            url: "inc/search.php",
+            data : data,
+            dataType : "json",
+            success: function(json){
+                $.each(json, function(index, value) {  
+                    var infowindow = new google.maps.InfoWindow({
+                        maxWidth: 300,
+                        content: value.content
+                    });
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(value.latitude, value.longitude),
+                        map: map,
+                        title : value.nom
+                    });
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.open(map, marker);
+                    });
+                });
+            }
+        });
+        return false;
+    });
+
     $("#main-section").on("click","#usager_add", function(){
         $("#section").load("inc/usager_add.php");
     });
