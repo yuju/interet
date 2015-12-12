@@ -20,6 +20,7 @@ require 'config.php';
 					<th>Type</th>
 					<th>Ville</th>
 					<th>Pays</th>
+					<!-- <th>image_link</th> -->
 					<th>Usager</th>
 					<th>Date</th>
 				</tr>
@@ -28,9 +29,11 @@ require 'config.php';
 				
 				<tr>
 					<?php 
-					$query_cmd = "SELECT m.id, m.nom, type, ville, p.nom AS nom_pays, mu.date, u.login 
-					FROM marqueur m, pays p, marqueur_usager mu, usager u 
-					WHERE (m.pays = p.code) AND  (m.id = mu.id_marqueur) AND (mu.id_usager = u.id)
+					$query_cmd = "SELECT m.id, m.nom, type, ville, image_link, p.nom AS nom_pays, mu.date, u.login 
+					FROM marqueur m
+					LEFT JOIN pays p ON (p.code = m.pays)
+					LEFT JOIN marqueur_usager mu ON (m.id = mu.id_marqueur)
+					LEFT JOIN usager u ON (mu.id_usager = u.id)
 					ORDER BY date DESC;";
 
 					$reponse = $bdd->query($query_cmd);
@@ -43,6 +46,7 @@ require 'config.php';
 							<td><?php echo $donnees["type"]; ?> </td>
 							<td><?php echo $donnees["ville"]; ?> </td>
 							<td><?php echo $donnees["nom_pays"]; ?> </td>
+							<!-- <td><img src="<?php echo $donnees["image_link"]; ?>" class="img-rounded"> </td> -->
 							<td><?php echo $donnees["login"]; ?> </td>
 							<td><?php echo $donnees["date"]; ?> </td>
 							<td>

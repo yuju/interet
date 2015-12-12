@@ -45,6 +45,10 @@ if ( isset($_GET["id"])) {
 				<label for="pays">Pays</label>
 				<input type="input" class="form-control" id="pays" name="pays" value="<?php if(isset($marqueur['pays'])) echo $marqueur['pays']; ?>">
 			</div>
+			<div class="form-group">
+				<label for="image_link">Url Image</label>
+				<input type="input" class="form-control" id="image_link" name="image_link" value="<?php if(isset($marqueur['image_link'])) echo $marqueur['image_link']; ?>">
+			</div>
 
 			<div class="form-group">
 				<label for="content">Content</label>
@@ -80,37 +84,43 @@ if ( isset($_GET["id"])) {
 	</form>
 </div>
 
-<h2 class="sub-header">This is modify record</h2>
-	<div class="table-responsive">
-		<table class="table table-striped">
-			<thead>
-				<tr>
+<div >
+	<div class="col-md-4">
+		<h3 class="sub-header">Historique des modifications</h3>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nom</th> <!-- username -->
+						<th>Login</th>
+						<th>Action</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<?php 
+						while ($donnees = $reponse->fetch())
+						{
+							?>
+							<tr>
+								<td><?php echo $donnees["nom"]; ?> </td>
+								<td><?php echo $donnees["login"]; ?> </td>
+								<td><?php echo utf8_encode($donnees["action"]); ?> </td>
+								<td><?php echo $donnees["date"]; ?> </td>
 
-					<th>Nom</th> <!-- username -->
-					<th>Login</th>
-					<th>Action</th>
-					<th>Date</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-				<tr>
-					<?php 
-					while ($donnees = $reponse->fetch())
-					{
+							</tr>
+							<?php
+						}
 						?>
-						<tr>
-							<td><?php echo $donnees["nom"]; ?> </td>
-							<td><?php echo $donnees["login"]; ?> </td>
-							<td><?php echo utf8_encode($donnees["action"]); ?> </td>
-							<td><?php echo $donnees["date"]; ?> </td>
-							
-						</tr>
-						<?php
-					}
-					?>
 
-				</tr>
-			</tbody>
-		</table>
+					</tr>
+				</tbody>
+			</table>
+		</div>	
 	</div>
+	<div class="col-md-8">
+		<img  src="<?php if(isset($marqueur['image_link'])) echo $marqueur['image_link']; ?>" class="img-rounded">
+	</div>
+</div>
+

@@ -13,8 +13,9 @@ if ( isset($_POST["nom"]) && isset($_POST["ville"]) && isset($_POST["pays"])) {
 	$latitude 	= $_POST["latitude"];
 	$longitude	= $_POST["longitude"];
 	$content	= $_POST["content"];
+	$image_link	= $_POST["image_link"];
 
-	$query_cmd = "INSERT INTO marqueur (nom, type, adresse, ville, pays, latitude, longitude, content) values ('$nom','$type','$adresse','$ville','$pays','$latitude','$longitude','$content')";
+	$query_cmd = "INSERT INTO marqueur (nom, type, adresse, ville, pays, latitude, longitude, image_link, content) values ('$nom','$type','$adresse','$ville','$pays','$latitude','$longitude','$image_link,'$content')";
 	$bdd->exec($query_cmd);
 
 	$id_marqueur = $bdd->lastInsertId(); // l'id du dernier marqueur inséré.

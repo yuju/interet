@@ -57,6 +57,10 @@ require "../config.php";
 					</select>
 				</div>
 				<div class="form-group">
+					<label for="image link">Image link</label>
+					<textarea class="form-control" id="image link" name="image link"></textarea>
+				</div>		
+				<div class="form-group">
 					<label for="content">Content</label>
 					<textarea class="form-control" id="content" name="content"></textarea>
 				</div>		
