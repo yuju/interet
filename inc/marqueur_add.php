@@ -7,7 +7,7 @@ require "../config.php";
 <div >
 	<h1 class="page-header">Ajouter un marqueur</h1>
 	<div>
-		<form method="POST" action="inc/marqueur_add_handle.php">
+		<form method="POST" action="inc/marqueur_add_handle.php" enctype="multipart/form-data">
 			<div class="col-md-4">
 
 				<div class="form-group">
@@ -56,10 +56,13 @@ require "../config.php";
 						?>
 					</select>
 				</div>
+
 				<div class="form-group">
-					<label for="image link">Image link</label>
-					<textarea class="form-control" id="image link" name="image link"></textarea>
-				</div>		
+					<label for="image">Image (Max : 2M)</label>
+					<input type="file" id="image" name="image" >
+					<p class="help-block">Choisir une image</p>
+				</div>
+
 				<div class="form-group">
 					<label for="content">Content</label>
 					<textarea class="form-control" id="content" name="content"></textarea>

@@ -17,7 +17,8 @@ if ( isset($_GET["id"])) {
 
 
 <div >
-	<h1 class="page-header">You can Modified your marqueurs</h1>
+	<h1 class="page-header">Modifier un marqueur</h1>
+	
 	<form method="POST" action="inc/marqueur_modify_handle.php">
 		<div class="col-md-4">
 			<input type="hidden" class="form-control" id="id" name ="id" value="<?php if(isset($marqueur['id'])) echo $marqueur['id']; ?>">
@@ -46,8 +47,8 @@ if ( isset($_GET["id"])) {
 				<input type="input" class="form-control" id="pays" name="pays" value="<?php if(isset($marqueur['pays'])) echo $marqueur['pays']; ?>">
 			</div>
 			<div class="form-group">
-				<label for="image_link">Url Image</label>
-				<input type="input" class="form-control" id="image_link" name="image_link" value="<?php if(isset($marqueur['image_link'])) echo $marqueur['image_link']; ?>">
+				<label for="image_link">Image</label>
+				<input type="file" class="form-control" id="image" name="image">
 			</div>
 
 			<div class="form-group">
@@ -79,10 +80,12 @@ if ( isset($_GET["id"])) {
 			</div>
 		</div>
 		<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Modified</button>
+			<button type="submit" class="btn btn-primary">Modifier</button>
 		</div>
 	</form>
 </div>
+
+<hr />
 
 <div >
 	<div class="col-md-4">
@@ -120,7 +123,7 @@ if ( isset($_GET["id"])) {
 		</div>	
 	</div>
 	<div class="col-md-8">
-		<img  src="<?php if(isset($marqueur['image_link'])) echo $marqueur['image_link']; ?>" class="img-rounded">
+		<?php if(isset($marqueur['image_name']) && !empty($marqueur['image_name'])) { ?> <img  src="<?php echo 'assets/img/markers/'.$marqueur['image_name']; ?>" class="img-rounded"> <?php }?>
 	</div>
 </div>
 

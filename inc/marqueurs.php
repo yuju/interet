@@ -29,7 +29,7 @@ require 'config.php';
 				
 				<tr>
 					<?php 
-					$query_cmd = "SELECT m.id, m.nom, type, ville, image_link, p.nom AS nom_pays, mu.date, u.login 
+					$query_cmd = "SELECT m.id, m.nom, type, ville, p.nom AS nom_pays, mu.date, u.login 
 					FROM marqueur m
 					LEFT JOIN pays p ON (p.code = m.pays)
 					LEFT JOIN marqueur_usager mu ON (m.id = mu.id_marqueur)
@@ -46,7 +46,6 @@ require 'config.php';
 							<td><?php echo $donnees["type"]; ?> </td>
 							<td><?php echo $donnees["ville"]; ?> </td>
 							<td><?php echo $donnees["nom_pays"]; ?> </td>
-							<!-- <td><img src="<?php echo $donnees["image_link"]; ?>" class="img-rounded"> </td> -->
 							<td><?php echo $donnees["login"]; ?> </td>
 							<td><?php echo $donnees["date"]; ?> </td>
 							<td>
