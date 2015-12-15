@@ -21,8 +21,10 @@
 					<th>Login</th>
 					<th>Email</th>
 					<th>Mobile</th>
-					<th>Pays</th>
+					<?php if (isset($_SESSION['usager']['role']) && $_SESSION['usager']['role'] == 'admin' ){ ?>
 					<th>Statut</th>
+					<th>Edit</th>
+					<?php } ?>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,11 +43,14 @@
 							<td><?php echo $donnees["login"]; ?> </td>
 							<td><?php echo $donnees["email"]; ?> </td>
 							<td><?php echo $donnees["mobile"]; ?> </td>
+							<?php if (isset($_SESSION['usager']['role']) && $_SESSION['usager']['role'] == 'admin' ){ ?>
+							<td><?php echo $donnees["statut"]; ?></td>
 							<td>
-								<button id="produit_add" type="button" class="btn btn-xs btn-primary" aria-label="Right Align">
+								<button id="usager_modify" type="button" class="btn btn-xs btn-primary" aria-label="Right Align"aria-label="Right Align" data-id="<?php echo $donnees["id"]; ?>">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								</button>
 							</td>
+							<?php } ?>
 							</tr>
 					<?php
 						}

@@ -11,7 +11,7 @@ if ( isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["login"])) 
 	$mobile 	= $_POST["mobile"];
 	$adresse 	= $_POST["adresse"];
 
-	$query_cmd = "INSERT INTO usager (nom, prenom, login, password, email, mobile, adresse) values ('$nom','$prenom','$login','$password','$email','$mobile','$adresse')";
+	$query_cmd = "INSERT INTO usager (nom, prenom, login, password, email, mobile, adresse, role) values ('$nom','$prenom','$login','$password','$email','$mobile','$adresse','member')";
 	$bdd->exec($query_cmd);
 }
 header("LOCATION:../usagers.php");
