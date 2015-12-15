@@ -90,6 +90,18 @@ $(document).ready(function(){
         });
     });
 
+     $("#main-section").on("click","#usager_modify", function(){
+        var id= $(this).attr('data-id');
+
+       $.ajax({
+            url: "inc/usager_modify.php",
+            data : "id="+id,
+            success: function(result){
+                $("#section").html(result);
+          }
+        });
+    });
+
     
     $("#profile").click(function(){
         var login = $(this).attr("data-login");
