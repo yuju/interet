@@ -7,26 +7,34 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	$password 	= $_POST["password"];
 	$email 		= $_POST["email"];
 
-	$query_cmd = "INSERT INTO usager (login, password, email) values ('$login','$password','$email')";
-	$bdd->exec($query_cmd);
-	
-	// TO DO;
-	// Ajouter la confirmation par email
+	$query_cmd = "SELECT * FROM usager WHERE lower(login) = '$login' OR lower(email) = '$email'";
+	$reponse = $bdd->query($query_cmd);
+	$usager = $reponse->fetch();
 
-	// the message
-	$msg = "Bienvenue   $login,\n
-	Nous vous remercions de votre inscription sur notre paltfome de points d'interet.\n
-    Afin d’accéder à votre compte et de contribuer a enrichier notre platforme,\n
-    conservez bien précieusement vos identifiant et mot de passe :\n
-	Identifiant : $email, Mot de passe : $password";
+	if($usager == false){
+		header("LOCATION:../errors.php?error=login");// TODO.
+	}else{
+		$query_cmd = "INSERT INTO usager (login, password, email, role) values ('$login','$password','$email','member')";
+		$bdd->exec($query_cmd);
 
-	// use wordwrap() if lines are longer than 70 characters
-	$msg = wordwrap($msg,70);
+		// the message
+		$msg = "Bienvenue   $login,\n
+		Nous vous remercions de votre inscription sur notre paltfome de points d'interet.\n
+		Afin d’accéder à votre compte et de contribuer a enrichier notre platforme,\n
+		conservez bien précieusement vos identifiant et mot de passe :\n
+		Identifiant : $email, Mot de passe : $password";
 
-	// send email
-	mail($email,$login.", Bienvenue chez Point d'interet",$msg);
+		// use wordwrap() if lines are longer than 70 characters
+		$msg = wordwrap($msg,70);
 
+		// send email
+		mail($email,$login.", Bienvenue chez Point d'interet",$msg);
+
+		// TODO
+
+		// Création de session comme le cas de la connexion
+
+
+		header("LOCATION:../index.php");
+	}
 }
-
-header("LOCATION:../index.php");
-echo "Le nouveau produit est enrigistré...";
