@@ -46,9 +46,22 @@ $(document).ready(function(){
             dataType : "json",
             success: function(json){
                 $.each(json, function(index, value) {  
+                    var content =
+                    '<div id="content">'+
+                        '<div id="siteNotice">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">'+value.nom+'</h1>'+
+                        '<div id="bodyContent">'+
+                            value.content+
+                        '</div>'+
+                        '<div id="imageContent">'+
+                            '<img src="assets/img/markers/'+value.image_name+'" class="img-rounded">'+
+                        '</div>'+                        
+                    '</div>';
+
                     var infowindow = new google.maps.InfoWindow({
-                        maxWidth: 300,
-                        content: value.content
+                        maxWidth: 400,
+                        content: content
                     });
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(value.latitude, value.longitude),

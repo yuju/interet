@@ -3,7 +3,6 @@ require 'config.php';
 ?>
 <div >
 	<h1 class="page-header">Marqueurs</h1>
-
 	<div class="row placeholders">
 		<button id="marqueur_add" type="button" class="btn btn-primary pull-right" aria-label="Right Align">
 			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter un marqueur
@@ -20,7 +19,6 @@ require 'config.php';
 					<th>Type</th>
 					<th>Ville</th>
 					<th>Pays</th>
-					<!-- <th>image_link</th> -->
 					<th>Usager</th>
 					<th>Date</th>
 				</tr>
