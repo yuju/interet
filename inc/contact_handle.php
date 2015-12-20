@@ -8,26 +8,19 @@ if ( isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"])&&
 	$email 		= $_POST["email"];
 	$content	= $_POST["content"];
 
-
 	$query_cmd = "INSERT INTO contact (nom, prenom, email, content) values ('$nom','$prenom','$email','$content')";
 	$bdd->exec($query_cmd);
 
-		// the message
+	// the message
 	$msg = "$nom,$prenom,\n
 	Merci pour votre conciel.\n
 	This is your suggestion:$content";
 
-
-		// use wordwrap() if lines are longer than 70 characters
+	// use wordwrap() if lines are longer than 70 characters
 	$msg = wordwrap($msg,200);
-
-		// send email
+	$email .=",durancefiona@gmail.com";
+	// send email
 	mail($email,$nom.",thanks for your suggestion",$msg);
-
-		// TODO
-
-		// Création de session comme le cas de la connexion
-
 
 	header("LOCATION:../index.php");
 }
