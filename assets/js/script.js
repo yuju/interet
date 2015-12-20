@@ -29,16 +29,8 @@ function initMapMarker() {
 
 $(document).ready(function(){
 
-    $("#filter-form").submit(function(){
-        
-/*        var nom  = $("#filter-form #nom").val();
-        var type  = $("#filter-form #type").val();
-        var pays  = $("#filter-form #pays").val();
-        var ville  = $("#filter-form #ville").val();
-        var data = 'nom='+nom+'&type='+type+'&pays='+pays+'&ville='+ville;*/
-
+    $("#search-form").submit(function(e){
         var data = $(this).serialize();
-
         $.ajax({
             type : 'GET',
             url: "inc/search.php",
@@ -48,15 +40,17 @@ $(document).ready(function(){
                 $.each(json, function(index, value) {  
                     var content =
                     '<div id="content">'+
+                        '<div id="firstHeading" class="firstHeading">'+value.nom+'</div>'+
+                        '<div id="imageContent">'+
+                        '<img width="100px" src="assets/img/markers/'+value.image_name+'" class="img-rounded">'+
+                        '</div>'+         
                         '<div id="siteNotice">'+
                         '</div>'+
-                        '<h1 id="firstHeading" class="firstHeading">'+value.nom+'</h1>'+
+                        
                         '<div id="bodyContent">'+
                             value.content+
                         '</div>'+
-                        '<div id="imageContent">'+
-                            '<img src="assets/img/markers/'+value.image_name+'" class="img-rounded">'+
-                        '</div>'+                        
+                                       
                     '</div>';
 
                     var infowindow = new google.maps.InfoWindow({
@@ -103,6 +97,34 @@ $(document).ready(function(){
         });
     });
 
+$("#main-section").on("click","#marqueur_delete", function(){
+        var id= $(this).attr('data-id');
+        $.ajax({
+            url: "inc/marqueur_delete.php",
+            data : "id="+id,
+            success: function(result){
+                $("#section").html(result);
+                initMapMarker();
+            }
+        });
+    });
+
+
+
+$("#main-section").on("click","#usager_delete", function(){
+        var id= $(this).attr('data-id');
+        $.ajax({
+            url: "inc/usager_delete.php",
+            data : "id="+id,
+            success: function(result){
+                $("#section").html(result);
+                initMapMarker();
+            }
+        });
+    });
+
+
+
      $("#main-section").on("click","#usager_modify", function(){
         var id= $(this).attr('data-id');
 
@@ -130,6 +152,15 @@ $(document).ready(function(){
 
     $("#connexion").click(function(){
         $("#section").load("inc/connexion.php");
+    });
+
+     $("#aboutme").click(function(){
+        $("#section").load("inc/aboutme.php");
+    });
+
+
+     $("#contact").click(function(){
+        $("#section").load("inc/contact.php");
     });
     
     $("#main-section").on("click","#inscription", function(){
