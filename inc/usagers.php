@@ -31,7 +31,7 @@
 				
 				<tr>
 					<?php 
-						$query_cmd = "SELECT * FROM usager";
+						$query_cmd = "SELECT * FROM usager WHERE date_suppression = '0000-00-00 00:00:00'";
 						$reponse = $bdd->query($query_cmd);
 						while ($donnees = $reponse->fetch())
 						{
