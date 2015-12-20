@@ -71,8 +71,10 @@ if ( isset($_GET["id"])) {
 				</div>									
 			</div>
 			<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Submit your new Profile now</button>
+			<button type="submit" class="btn btn-primary">Modify now</button>
+			<button id="usager_delete" type="submit" class="btn btn-danger">Delete now</button>
 			</div>
+		
 		</form>
 	</div>
 </div>
@@ -112,7 +114,5 @@ if ( isset($_GET["id"])) {
 			</table>
 		</div>	
 	</div>
-	<div class="col-md-8">
-		<img  src="<?php if(isset($marqueur['image_link'])) echo $marqueur['image_link']; ?>" class="img-rounded">
-	</div>
+	
 </div>
