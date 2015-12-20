@@ -14,9 +14,17 @@ if ( isset($_POST["id"]))
 	$email 			= $_POST["email"];
 	$mobile			= $_POST["mobile"];
 	$adresse		= $_POST["adresse"];
-	$date_modification   = date('Y-m-d H:i:s');
+	$date_modification = date('Y-m-d H:i:s');
+	$date_suppression  = date('Y-m-d H:i:s');
 
-	$query_cmd = "UPDATE usager SET nom ='$nom',  prenom ='$prenom', date_naissance='$date_naissance', login='$login', password='$password', email ='$email', mobile='$mobile', adresse='$adresse', date_modification = '$date_modification' WHERE id=$id";
-	$bdd->exec($query_cmd);
+	if(isset($_POST["usager_modify"])){
+		$query_cmd = "UPDATE usager SET nom ='$nom',  prenom ='$prenom', date_naissance='$date_naissance', login='$login', password='$password', email ='$email', mobile='$mobile', adresse='$adresse', date_modification = '$date_modification' WHERE id=$id";
+		$bdd->exec($query_cmd);
+	}
+
+	if(isset($_POST["usager_delete"])){
+		$query_cmd = "UPDATE usager SET  date_suppression = '$date_modification' WHERE id=$id";
+		$bdd->exec($query_cmd);
+	}
 }
 header("LOCATION:../usagers.php");

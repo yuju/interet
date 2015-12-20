@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require "../config.php";
 
 if ( isset($_GET["id"])) {
@@ -22,8 +24,7 @@ if ( isset($_GET["id"])) {
 	<div>
 		<form method="POST" action="inc/usager_modify_handle.php">
 			<div class="col-md-6">
-				<fieldset>
-
+				
 				<div class="form-group">
 					<label for="id">id</label>
 					<input type="input" class="form-control" id="id" name ="id" value="<?php if(isset($usager['id'])) echo $usager['id']; ?>">
@@ -42,8 +43,6 @@ if ( isset($_GET["id"])) {
 					<label for="date_naissance">Date de naissance</label>
 					<input type="input" class="form-control" id="date_naissance" name="date_naissance" value="<?php if(isset($usager['date_naissance'])) echo $usager['date_naissance']; ?>">
 				</div>
-
-				</fieldset>	
 
 				<div class="form-group">
 					<label for="login">Login</label>
@@ -71,10 +70,9 @@ if ( isset($_GET["id"])) {
 				</div>									
 			</div>
 			<div class="col-md-12">
-			<button type="submit" class="btn btn-primary">Modify now</button>
-			<button id="usager_delete" type="submit" class="btn btn-danger">Delete now</button>
+				<button name="usager_modify" type="submit" class="btn btn-primary">Modify now</button>
+				<button name="usager_delete" type="submit" class="btn btn-danger">Delete now</button>
 			</div>
-		
 		</form>
 	</div>
 </div>

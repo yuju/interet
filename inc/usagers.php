@@ -49,6 +49,10 @@
 								<button id="usager_modify" type="button" class="btn btn-xs btn-primary" aria-label="Right Align"aria-label="Right Align" data-id="<?php echo $donnees["id"]; ?>">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								</button>
+								<button id="usager_delete" type="button" class="label label-danger" aria-label="Right Align" data-id="<?php echo $donnees["id"]; ?>">
+									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+								</button>
+
 							</td>
 							<?php } ?>
 							</tr>
