@@ -12,8 +12,6 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	$usager = $reponse->fetch();
 
 	if($usager == false){
-		header("LOCATION:../errors.php?error=login");// TODO.
-	}else{
 		$query_cmd = "INSERT INTO usager (login, password, email, role) values ('$login','$password','$email','member')";
 		$bdd->exec($query_cmd);
 
@@ -36,5 +34,7 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 
 
 		header("LOCATION:../index.php");
+	}else{
+		header("LOCATION:../errors.php?error=login");// TODO.
 	}
 }
