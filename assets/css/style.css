@@ -1,4 +1,4 @@
-#map { height: 600px; width: 1250px; }
+#map { height: 675px; width: 1250px; padding:0px;margin: -10px;}
 #mapmarker { height: 400px; width: 100%; }
 
 /* ======= Info window ========== */
@@ -101,6 +101,61 @@
 	.dropdown.dropdown-lg .dropdown-menu {
 		min-width: 500px;
 	}
+}
+
+/* aboutme*/
+
+#conteneur {
+  width: 1200px;
+  min-height: 1000px
+  margin: auto;
+  padding: 5px;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 6px 6px 6px #303030;
+}
+/* HEADER */
+#aboutheader {
+  margin: 0px;
+  padding:5px;
+  height:120px;
+}
+#photo2 {
+  float: left;
+  display: inline-block;
+  margin-right: 10px;
+  width: 50px;
+  height:70px;
+}
+/*SEPARATION*/
+ #separation {
+   height:5px;
+  background-color: #C8C8C8;
+   margin: 0px;
+ }
+
+ /* SECTION */
+#aboutsection {
+  display: block;
+  display: inline-block;
+  width: 80%;
+  margin: 0px;
+  vertical-align: top;
+  text-align: left;
+  padding: 5px;
+}
+/* ARTICLE */
+#aboutarticle {
+  padding: 0px;
+  margin: 0px;
+  text-align: justify;
+}
+
+#aboutbody {
+  background-color: #C8C8C8;
+  color: #606060;
+  font-size: 100%;
+  font-family: "Times New Roman", Times, serif;
 }
 
 
