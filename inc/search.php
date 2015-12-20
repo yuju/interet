@@ -6,7 +6,7 @@ if(isset($_GET["nom"]) && isset($_GET["type"]) && isset($_GET["pays"]) && isset(
 	$where = "";
 	
 	// If $_GET["nom"] is not empty
-	if(!empty($_GET["nom"])) $where .= " AND nom = '".$_GET["nom"]."'";
+	if( !empty($_GET["nom"])) $where .= " AND nom = '".$_GET["nom"]."'";
 	
 	// If $_GET["type"] is not empty
 	if(!empty($_GET["type"])) $where .= " AND type = '".$_GET["type"]."'";
