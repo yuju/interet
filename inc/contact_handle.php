@@ -3,10 +3,10 @@ require "../config.php";
 
 if ( isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"])&& isset($_POST["content"]) ) {
 	
-	$nom 		= $_POST["nom"];
-	$prenom 	= $_POST["prenom"];
-	$email 		= $_POST["email"];
-	$content	= $_POST["content"];
+	$nom 		=addslashes($_POST["nom"]);
+	$prenom 	=addslashes( $_POST["prenom"]);
+	$email 		=addslashes( $_POST["email"]);
+	$content	=addslashes( $_POST["content"]);
 
 	$query_cmd = "INSERT INTO contact (nom, prenom, email, content) values ('$nom','$prenom','$email','$content')";
 	$bdd->exec($query_cmd);

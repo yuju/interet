@@ -6,14 +6,14 @@ require "../config.php";
 if ( isset($_POST["id"])) 
 {
 	$id         	= $_POST["id"];
-	$nom 			= $_POST["nom"];
-	$prenom 		= $_POST["prenom"];
+	$nom 			= addslashes($_POST["nom"]);
+	$prenom 		= addslashes($_POST["prenom"]);
 	$date_naissance	= $_POST["date_naissance"];
-	$login 			= $_POST["login"];
+	$login 			= addslashes($_POST["login"]);
 	$password 		= $_POST["password"];
-	$email 			= $_POST["email"];
+	$email 			= addslashes($_POST["email"]);
 	$mobile			= $_POST["mobile"];
-	$adresse		= $_POST["adresse"];
+	$adresse		= addslashes($_POST["adresse"]);
 	$date_modification = date('Y-m-d H:i:s');
 	$date_suppression  = date('Y-m-d H:i:s');
 

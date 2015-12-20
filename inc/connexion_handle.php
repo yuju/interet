@@ -4,8 +4,8 @@ session_start();
 require "../config.php";
 
 if ( isset($_POST["login"]) && isset($_POST["password"])) {
-	$login 		= $_POST["login"];
-	$password 	= $_POST["password"];
+	$login 		= addslashes($_POST["login"]);
+	$password 	=addslashes( $_POST["password"]);
 	$date_authentification  = date('Y-m-d H:i:s');
 	
 	$query_cmd = "SELECT * FROM usager WHERE login = '$login' AND password = '$password'";
