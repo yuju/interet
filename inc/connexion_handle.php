@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require "../config.php";
 
 if ( isset($_POST["login"]) && isset($_POST["password"])) {
@@ -21,5 +22,4 @@ if ( isset($_POST["login"]) && isset($_POST["password"])) {
 		header("LOCATION:../errors.php?error=connexion");
 	}
 }
-//header("LOCATION:../index.php");
-echo "Le nouveau produit est enrigistré";
+header("LOCATION:../index.php");
