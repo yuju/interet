@@ -5,14 +5,14 @@ require "../config.php";
 
 if ( isset($_POST["nom"]) && isset($_POST["ville"]) && isset($_POST["pays"]) && isset($_FILES['image']) ) {
 
-	$nom 		= $_POST["nom"];
+	$nom 		= addslashes($_POST["nom"]);
 	$type 		= $_POST["type"];
-	$adresse	= $_POST["adresse"];
-	$ville		= $_POST["ville"];
+	$adresse	= addslashes($_POST["adresse"]);
+	$ville		= addslashes($_POST["ville"]);
 	$pays		= $_POST["pays"];
 	$latitude 	= $_POST["latitude"];
 	$longitude	= $_POST["longitude"];
-	$content	= $_POST["content"];
+	$content	= addslashes($_POST["content"]);
 
 	// Image
 	$image 		= $_FILES['image'];
