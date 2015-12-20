@@ -50,6 +50,9 @@ require 'config.php';
 								<button id="marqueur_modify" type="button" class="btn btn-xs btn-primary" aria-label="Right Align" data-id="<?php echo $donnees["id"]; ?>">
 									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 								</button>
+								<button id="marqueur_delete" type="button" class="label label-danger" aria-label="Right Align" data-id="<?php echo $donnees["id"]; ?>">
+									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+								</button>
 
 							</td>
 						</tr>
