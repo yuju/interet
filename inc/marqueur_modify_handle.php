@@ -24,8 +24,7 @@ if ( isset($_POST["id"])) {
 	$action = utf8_decode('Modification');
 	$date   = date('Y-m-d H:i:s');
 
-	$action = utf8_decode('Modification');
-	$date   = date('Y-m-d H:i:s');
+
 
 	$query_cmd = "INSERT INTO marqueur_usager (id_marqueur, id_usager, action, date) values ($id_marqueur,$id_usager,'$action','$date')";
 	$bdd->exec($query_cmd);	
