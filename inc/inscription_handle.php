@@ -35,6 +35,6 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 
 		header("LOCATION:../index.php");
 	}else{
-		header("LOCATION:../errors.php?error=login");// TODO.
+		header("LOCATION:../errors.php?error=inscription");// TODO.
 	}
 }

@@ -17,7 +17,9 @@ if ( isset($_POST["login"]) && isset($_POST["password"])) {
 			'login' => $usager['login'],
 			'role'  => $usager['role']
 		);
+	}else{
+		header("LOCATION:../errors.php?error=connexion");
 	}
 }
-header("LOCATION:../index.php");
+//header("LOCATION:../index.php");
 echo "Le nouveau produit est enrigistré";
