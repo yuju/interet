@@ -1,28 +1,25 @@
-<div>
-	<h2>Filtres</h2>
-	<form id="filter-form" action="inc/search.php">
-		
-		<div class="form-group">
-			<label for="nom">Nom de place</label>
-			<input type="input" class="form-control" id="nom" name ="nom">
-		</div>
+<h4>Les 5 derniers membres connectés</h4>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Login</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php 
 
-		<div class="form-group">
-			<label for="type">Type</label>
-			<input type="input" class="form-control" id="type" name="type">
-		</div>
-
-		<div class="form-group">
-			<label for="pays">Pays</label>
-			<input type="input" class="form-control" id="pays" name="pays">
-		</div>
-
-		<div class="form-group">
-			<label for="ville">Ville</label>
-			<input type="input" class="form-control" id="ville" name="ville">
-		</div>
-
-		<button type="submit" class="btn btn-primary pull-right">Search</button>
-
-	</form>
-</div>
+		$query_cmd = "SELECT * FROM usager ORDER BY date_authentification DESC LIMIT 5";
+		$reponse = $bdd->query($query_cmd);
+		while ($donnees = $reponse->fetch())
+		{
+			?>
+			<tr>
+				<td><?php echo $donnees["login"]; ?> </td>
+				<td><?php echo $donnees["date_authentification"]; ?> </td>
+			</tr>
+			<?php
+		}
+		?>
+	</tbody>
+</table>
