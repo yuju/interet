@@ -8,13 +8,14 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 	$login 		= addslashes($_POST["login"]);
 	$password 	= addslashes($_POST["password"]);
 	$email 		= addslashes($_POST["email"]);
+	$datetime  = date('Y-m-d H:i:s');
 
 	$query_cmd = "SELECT * FROM usager WHERE lower(login) = '$login' OR lower(email) = '$email'";
 	$reponse = $bdd->query($query_cmd);
 	$usager = $reponse->fetch();
 
 	if($usager == false){
-		$query_cmd = "INSERT INTO usager (login, password, email, role) values ('$login','$password','$email','member')";
+		$query_cmd = "INSERT INTO usager (login, password, email, role, date_inscription, date_authentification) values ('$login','$password','$email','member','$datetime','$datetime')";
 		
 		if($bdd->exec($query_cmd)){
 			
@@ -39,7 +40,7 @@ if ( isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["email"
 				'login' => $login,
 				'role'  => 'member'
 				);
-
+			
 			header("LOCATION:../index.php");	
 		}	
 	}else{
