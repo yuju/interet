@@ -122,8 +122,8 @@ if ( isset($_GET["id"])) {
 			</table>
 		</div>	
 	</div>
-	<div class="col-md-8">
-		<?php if(isset($marqueur['image_name']) && !empty($marqueur['image_name'])) { ?> <img  src="<?php echo 'assets/img/markers/'.$marqueur['image_name']; ?>" class="img-rounded"> <?php }?>
+	<div class="col-md-6">
+		<?php if(isset($marqueur['image_name']) && !empty($marqueur['image_name'])) { ?> <img  src="<?php echo 'assets/img/markers/'.$marqueur['image_name']; ?>" class="img-rounded" width="1000px" > <?php }?>
 	</div>
 </div>
 

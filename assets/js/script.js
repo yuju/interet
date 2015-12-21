@@ -42,7 +42,7 @@ $(document).ready(function(){
                     '<div id="content">'+
                         '<div id="firstHeading" class="firstHeading">'+value.nom+'</div>'+
                         '<div id="imageContent">'+
-                        '<img width="100px" src="assets/img/markers/'+value.image_name+'" class="img-rounded">'+
+                        '<img width="200px" src="assets/img/markers/'+value.image_name+'" class="img-rounded">'+
                         '</div>'+         
                         '<div id="siteNotice">'+
                         '</div>'+

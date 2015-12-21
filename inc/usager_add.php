@@ -1,5 +1,5 @@
 <div >
-	<h1 class="page-header">Ajouter un produit</h1>
+	<h1 class="page-header">Ajouter un Nouveau Usager</h1>
 	<div>
 		<form method="POST" action="inc/usager_add_handle.php">
 			<div class="col-md-6">
